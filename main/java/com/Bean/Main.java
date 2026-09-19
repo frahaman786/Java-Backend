@@ -1,12 +1,15 @@
-package com.myapp;
-import org.springframework.context.ApplicationContext;
+package com.Bean;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
+
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.myapp");
+
+        //Spring Start Ioc container
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         Computer computer = context.getBean(Computer.class);
+
         computer.type();
     }
-
 }
